@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Крестики-нолики</h1>
+
+        <div class="controls">
+            <div class="control" id="startGameControls">
+                <input id="sizeInput" type="number" min="3" max="12" class="form-control">
+                <button class="btn btn-primary" id="gameStart">Начать игру</button>
+            </div>
+            <div class="control hidden" id="restartGameControls">
+                <button class="btn btn-primary" id="gameReStart">Начать заново</button>
+            </div>
+        </div>
+
+        <div class="message message--error hidden" id="messageError">
+
+        </div>
+
+        <div class="message message--info hidden" id="messageInfo">
+
+        </div>
+
+        <div class="message hidden" id="messageSuccess">
+
+        </div>
+
+        <div id="gameField" class="field">
+
+        </div>
+    </div>
+
+</body>
+</html>

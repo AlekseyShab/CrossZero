@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #cecece;
+    --border-color: #93acaa;
+    --border-color-accent: #000000;
+    --font-color: #0a260a;
+    --font-color-accent: forestgreen;
+    --bg-color-light: #53cc8f;
+    --color-white: #f1f1f1;
+    --color-black: #111;
+    --color-danger: #d40000;
+
+    --cell-size: 7rem;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*::before,*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+    background: var(--bg-color);
+    padding: 1.5rem;
+}
+
+.controls {
+    border-bottom: 0.2rem solid;
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+.control {
+    display: flex;
+}
+
+.control input[type="number"], .control button {
+    padding: 0.5em 0.7em;
+    font-size: 1.6rem;
+    border: 0.15em solid var(--border-color);
+    color: var(--font-color-accent);
+    font-family: inherit;
+    outline: none;
+    background: var(--color-white);
+}
+
+.control button {
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 0;
+}
+
+.control input[type="text"]:focus, .control button {
+    border-color: var(--border-color-accent);
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.field {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    border: 1px solid
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid;
+    box-sizing: border-box;
+    position: relative;
+    transition: 0.4s;
+}
+
+.cell--zero, .cell--cross {
+    background: var(--color-white);
+}
+
+.cell--zero::before, .cell--cross::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: var(--cell-size);
+    text-align: center;
+}
+
+.cell--zero::before {
+    content: "◯";
+    font-size: calc(var(--cell-size) - 2rem);
+}
+
+.cell--cross::before {
+    content: "✕";
+    font-size: calc(var(--cell-size) - 1rem);
+}
+
+.cell--error {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+.message {
+    color: var(--font-color-accent);
+    padding: 1em 1.5em;
+    font-size: 1.8rem;
+    border: 2px solid;
+    margin: 1.3em 0;
+    border-radius: 0.3rem;
+}
+
+.message--error {
+    color: var(--color-danger);
+}
+
+.message--info {
+    color: var(--color-black);
+}
